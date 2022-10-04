@@ -1,0 +1,97 @@
+@prefix schema: <https://schema.org/>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix foaf: <http://xmlns.com/foaf/0.1/>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix dcterms: <http://purl.org/dc/terms/>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix jsonsc: <https://www.w3.org/2019/wot/json-schema#>.
+@prefix gbfs: <https://w3id.org/gbfs#>.
+@prefix jsonsc-ld: <http://w3id.org/jsonsc-ld/>.
+@prefix api: <http://purl.org/linked-data/api/vocab>.
+@prefix geo: <http://www.w3.org/2003/01/geo/wgs84_pos#>.
+@prefix mobivoc: <http://schema.mobivoc.org/#>.
+@prefix geosparql: <http://www.opengis.net/ont/geosparql#>.
+
+<https://github.com/NABSA/gbfs/blob/v2.3/gbfs-ld.json> rdf:type jsonsc-ld:Schema;
+    jsonsc-ld:enriches <https://github.com/NABSA/gbfs/blob/v2.2/gbfs.md#vehicle_typesjson-added-in-v21-rc>.
+<https://github.com/NABSA/gbfs/blob/v2.2/gbfs.md#vehicle_typesjson-added-in-v21-rc> rdf:type rdfs:Class.
+<https://github.com/NABSA/gbfs/blob/v2.3/gbfs-ld.json> dcterms:title "The GBFS LD configuration";
+    dcterms:description "A file containing extra configuration to map the GBFS json schemas to an RDFS vocabulary";
+    dcterms:creator <https://pietercolpaert.be/#me>, <https://w3id.org/people/brechtvdv/#me>, <https://data.knows.idlab.ugent.be/person/andreipopescu/#me>, <https://data.knows.idlab.ugent.be/person/jilong/#me>;
+    dcterms:license "MIT";
+    dcterms:rights "Copyright statement";
+    dcterms:modified "2022-06-02T11:32:52.12679".
+<https://github.com/NABSA/gbfs/blob/v2.2/gbfs.md#vehicle_typesjson-added-in-v21-rc> dcterms:description "Describes the types of vehicles that System operator has available for rent (added in v2.1-RC).".
+dcterms:modified rdf:type rdf:Property.
+gbfs:ttl dcterms:description "Number of seconds before the data in the feed will be updated again (0 if the data should always be refreshed).";
+    rdf:type rdf:Property;
+    rdfs:label "ttl";
+    rdfs:domain <https://github.com/NABSA/gbfs/blob/v2.2/gbfs.md#vehicle_typesjson-added-in-v21-rc>;
+    rdfs:range xsd:integer.
+gbfs:version dcterms:description "GBFS version number to which the feed conforms, according to the versioning framework.";
+    rdf:type rdf:Property;
+    rdfs:label "version";
+    rdfs:domain <https://github.com/NABSA/gbfs/blob/v2.2/gbfs.md#vehicle_typesjson-added-in-v21-rc>;
+    rdfs:range xsd:string.
+gbfs:Vehicle_type rdf:type rdfs:Class;
+    rdfs:label "Vehicle_type".
+gbfs:vehicle_type_id dcterms:description "Unique identifier of a vehicle type.";
+    rdf:type rdf:Property;
+    rdfs:label "vehicle_type_id";
+    rdfs:domain gbfs:Vehicle_type;
+    rdfs:range xsd:string.
+gbfs:form_factor dcterms:description "The vehicle's general form factor.";
+    rdf:type rdf:Property;
+    rdfs:label "form_factor";
+    rdfs:domain gbfs:Vehicle_type.
+gbfs:Form_factor rdf:type skos:ConceptScheme.
+gbfs:form_factor rdfs:range [
+  owl:oneOf (gbfs:bicycle gbfs:car gbfs:moped gbfs:other gbfs:scooter)
+].
+gbfs:bicycle rdf:type skos:Concept;
+    skos:inScheme gbfs:Form_factor;
+    rdfs:label "bicycle".
+gbfs:car rdf:type skos:Concept;
+    skos:inScheme gbfs:Form_factor;
+    rdfs:label "car".
+gbfs:moped rdf:type skos:Concept;
+    skos:inScheme gbfs:Form_factor;
+    rdfs:label "moped".
+gbfs:other rdf:type skos:Concept;
+    skos:inScheme gbfs:Form_factor;
+    rdfs:label "other".
+gbfs:scooter rdf:type skos:Concept;
+    skos:inScheme gbfs:Form_factor;
+    rdfs:label "scooter".
+gbfs:propulsion_type dcterms:description "The primary propulsion type of the vehicle.";
+    rdf:type rdf:Property;
+    rdfs:label "propulsion_type";
+    rdfs:domain gbfs:Vehicle_type.
+gbfs:Propulsion_type rdf:type skos:ConceptScheme.
+gbfs:propulsion_type rdfs:range [
+  owl:oneOf (gbfs:human gbfs:electric_assist gbfs:electric gbfs:combustion)
+].
+gbfs:human rdf:type skos:Concept;
+    skos:inScheme gbfs:Propulsion_type;
+    rdfs:label "human".
+gbfs:electric_assist rdf:type skos:Concept;
+    skos:inScheme gbfs:Propulsion_type;
+    rdfs:label "electric_assist".
+gbfs:electric rdf:type skos:Concept;
+    skos:inScheme gbfs:Propulsion_type;
+    rdfs:label "electric".
+gbfs:combustion rdf:type skos:Concept;
+    skos:inScheme gbfs:Propulsion_type;
+    rdfs:label "combustion".
+gbfs:max_range_meters dcterms:description "The furthest distance in meters that the vehicle can travel without recharging or refueling when it has the maximum amount of energy potential.";
+    rdf:type rdf:Property;
+    rdfs:label "max_range_meters";
+    rdfs:domain gbfs:Vehicle_type;
+    rdfs:range xsd:decimal.
+gbfs:name dcterms:description "The public name of this vehicle type.";
+    rdf:type rdf:Property;
+    rdfs:label "name";
+    rdfs:domain gbfs:Vehicle_type;
+    rdfs:range xsd:string.
