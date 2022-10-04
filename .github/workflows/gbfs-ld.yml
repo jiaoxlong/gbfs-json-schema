@@ -1,0 +1,60 @@
+name: GBFS-LD RDF vocabulary and Shacl shapes
+run-name: GBFS-LD
+on: [push]
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref }}
+    steps:
+      # Checkout repo
+      - uses: actions/checkout@v2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 18.x
+
+      # install jsc-ld package
+      - run: npm i -g jsc-ld
+
+      # env variables
+      - name: "declare env variables"
+        id: ld_version
+        run: |
+          gbfs_ld_dir="GBFS-LD"
+          echo ::set-output name=GBFS_LD_DIR::"GBFS-LD"
+          gbfs_ld_version="${gbfs_ld_dir}/Version"
+          echo ::set-output name=VERSION::`cat $gbfs_ld_version`
+        
+
+      # use jsc-ld to generate RDF.
+      - run: |
+          ld_version="${{ steps.ld_version.outputs.VERSION }}"
+          ld_version_dir=${{ steps.ld_version.outputs.GBFS_LD_DIR }}
+          IFS=', ' read -r -a versions <<< $ld_version
+          #readarray -t versions <<< $ld_version
+          for version in "${versions[@]}"
+            do
+              mkdir -p $ld_version_dir/$version/RDF
+              jsc-ld -s $ld_version_dir/$version/JSC-LD -c $ld_version_dir/configs/config.json -o $ld_version_dir/$version/RDF
+            done
+
+      # setup GitHub username and email.
+      - run: |
+          
+          git config user.name "Jiao Long"
+          git config user.email "jiao.long@ugent.be"
+
+      # git commit
+      - run: |
+          git add GBFS-LD
+          git commit -m "GBFS-LD RDF is generated"
+
+      # git push
+
+      - name: git push
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ github.ref }}
