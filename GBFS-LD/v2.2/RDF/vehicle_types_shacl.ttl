@@ -1,0 +1,72 @@
+@prefix dash: <http://datashapes.org/dash#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix schema: <https://schema.org/>.
+@prefix sh: <http://www.w3.org/ns/shacl#>.
+@prefix dcterms: <http://purl.org/dc/terms/>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix gbfs: <https://w3id.org/gbfs#>.
+@prefix geo: <http://www.w3.org/2003/01/geo/wgs84_pos#>.
+@prefix mobivoc: <http://schema.mobivoc.org/#>.
+@prefix gbfsshape: <https://w3id.org/gbfs/shapes/vehicle_typesjson-added-in-v21-rc#>.
+
+gbfsshape:vehicle_typesjson-added-in-v21-rcShape rdf:type sh:NodeShape;
+    sh:targetClass <https://github.com/NABSA/gbfs/blob/v2.2/gbfs.md#vehicle_typesjson-added-in-v21-rc>;
+    sh:property [
+  sh:path dcterms:modified;
+  sh:minCount 1;
+  sh:maxCount 1;
+  sh:minInclusive 1450155600;
+  sh:datatype xsd:integer
+], [
+  sh:path gbfs:ttl;
+  sh:description "Number of seconds before the data in the feed will be updated again (0 if the data should always be refreshed).";
+  sh:name "ttl";
+  sh:minCount 1;
+  sh:maxCount 1;
+  sh:minInclusive 0;
+  sh:datatype xsd:integer
+], [
+  sh:path gbfs:version;
+  sh:description "GBFS version number to which the feed conforms, according to the versioning framework.";
+  sh:name "version";
+  sh:hasValue "2.2";
+  sh:minCount 1;
+  sh:maxCount 1;
+  sh:datatype xsd:string
+].
+gbfs:Vehicle_typeShape rdf:type sh:NodeShape;
+    sh:targetClass gbfs:Vehicle_type;
+    sh:property [
+  sh:path gbfs:vehicle_type_id;
+  sh:description "Unique identifier of a vehicle type.";
+  sh:name "vehicle_type_id";
+  sh:minCount 1;
+  sh:maxCount 1;
+  sh:datatype xsd:string
+], [
+  sh:path gbfs:form_factor;
+  sh:description "The vehicle's general form factor.";
+  sh:name "form_factor";
+  sh:in (gbfs:bicycle gbfs:car gbfs:moped gbfs:other gbfs:scooter);
+  sh:minCount 1;
+  sh:maxCount 1
+], [
+  sh:path gbfs:propulsion_type;
+  sh:description "The primary propulsion type of the vehicle.";
+  sh:name "propulsion_type";
+  sh:in (gbfs:human gbfs:electric_assist gbfs:electric gbfs:combustion);
+  sh:minCount 1;
+  sh:maxCount 1
+], [
+  sh:path gbfs:max_range_meters;
+  sh:description "The furthest distance in meters that the vehicle can travel without recharging or refueling when it has the maximum amount of energy potential.";
+  sh:name "max_range_meters";
+  sh:minInclusive 0;
+  sh:datatype xsd:decimal
+], [
+  sh:path gbfs:name;
+  sh:description "The public name of this vehicle type.";
+  sh:name "name";
+  sh:datatype xsd:string
+].
