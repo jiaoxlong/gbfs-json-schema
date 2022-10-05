@@ -24,7 +24,8 @@
     dcterms:rights "Copyright statement";
     dcterms:modified "2022-06-02T11:32:52.12679".
 <https://github.com/NABSA/gbfs/blob/v2.3/gbfs.md#vehicle_typesjson-added-in-v21-rc> dcterms:description "Describes the types of vehicles that System operator has available for rent (added in v2.1-RC).".
-dcterms:modified rdf:type rdf:Property.
+dcterms:modified dcterms:description "Last time the data in the feed was updated in POSIX time.";
+    rdf:type rdf:Property.
 gbfs:ttl dcterms:description "Number of seconds before the data in the feed will be updated again (0 if the data should always be refreshed).";
     rdf:type rdf:Property;
     rdfs:label "ttl";
