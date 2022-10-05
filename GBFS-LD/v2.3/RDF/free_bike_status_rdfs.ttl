@@ -24,7 +24,8 @@
     dcterms:rights "Copyright statement";
     dcterms:modified "2022-06-02T11:32:52.12679".
 <https://github.com/NABSA/gbfs/blob/v2.3/gbfs.md#free_bike_statusjson> dcterms:description "Describes the vehicles that are available for rent (as of v2.1-RC2).".
-dcterms:modified rdf:type rdf:Property.
+dcterms:modified dcterms:description "Last time the data in the feed was updated in POSIX time.";
+    rdf:type rdf:Property.
 gbfs:ttl dcterms:description "Number of seconds before the data in the feed will be updated again (0 if the data should always be refreshed).";
     rdf:type rdf:Property;
     rdfs:label "ttl";
@@ -42,8 +43,10 @@ gbfs:bike_id dcterms:description "Rotating (as of v2.0) identifier of a vehicle.
     rdfs:label "bike_id";
     rdfs:domain gbfs:Bike;
     rdfs:range xsd:string.
-geo:lat rdf:type rdf:Property.
-geo:long rdf:type rdf:Property.
+geo:lat dcterms:description "The latitude of the vehicle.";
+    rdf:type rdf:Property.
+geo:long dcterms:description "The longitude of the vehicle.";
+    rdf:type rdf:Property.
 gbfs:is_reserved dcterms:description "Is the vehicle currently reserved?";
     rdf:type rdf:Property;
     rdfs:label "is_reserved";
