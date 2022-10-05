@@ -36,6 +36,7 @@ jobs:
           #readarray -t versions <<< $ld_version
           for version in "${versions[@]}"
             do
+              # empty RDF folder before launching jsc-ld
               find $ld_version_dir/$version/RDF -type f -delete
               mkdir -p $ld_version_dir/$version/RDF
               jsc-ld -s $ld_version_dir/$version/JSC-LD -c $ld_version_dir/configs/config.json -o $ld_version_dir/$version/RDF
