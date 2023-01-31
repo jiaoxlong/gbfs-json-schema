@@ -104,6 +104,15 @@ gbfs:BicycleParkingStationShape rdf:type sh:NodeShape;
   sh:path gbfs:station_area;
   sh:description "A multipolygon that describes the area of a virtual station (added in v2.1-RC).";
   sh:name "station_area"
+].
+gbfs:StationAreaShape rdf:type sh:NodeShape;
+    sh:targetClass gbfs:StationArea;
+    sh:property [
+  sh:path gbfs:type;
+  sh:name "type";
+  sh:in (gbfs:MultiPolygon);
+  sh:minCount 1;
+  sh:maxCount 1
 ], [
   sh:path gbfs:capacity;
   sh:description "Number of total docking points installed at this station, both available and unavailable.";
@@ -114,7 +123,10 @@ gbfs:BicycleParkingStationShape rdf:type sh:NodeShape;
   sh:path gbfs:vehicle_capacity;
   sh:description "An object where each key is a vehicle_type_id and the value is a number presenting the total number of vehicles of this type that can park within the station_area (added in v2.1-RC).";
   sh:name "vehicle_capacity"
-], [
+].
+gbfs:VehicleCapacityShape rdf:type sh:NodeShape;
+    sh:targetClass gbfs:VehicleCapacity;
+    sh:property [
   sh:path gbfs:is_valet_station;
   sh:description "Are valet services provided at this station? (added in v2.1-RC)";
   sh:name "is_valet_station";
@@ -146,3 +158,5 @@ gbfs:Rental_urisShape rdf:type sh:NodeShape;
   sh:description "An object where each key is a vehicle_type_id and the value is a number representing the total docking points installed at this station for each vehicle type (added in v2.1-RC).";
   sh:name "vehicle_type_capacity"
 ].
+gbfs:VehicleTypeCapacityShape rdf:type sh:NodeShape;
+    sh:targetClass gbfs:VehicleTypeCapacity.
