@@ -24,8 +24,7 @@
     dcterms:rights "Copyright statement";
     dcterms:modified "2022-06-02T11:32:52.12679".
 <https://github.com/NABSA/gbfs/blob/v2.3/gbfs.md#geofencing_zonesjson> dcterms:description "Describes geofencing zones and their associated rules and attributes (added in v2.1-RC).".
-dcterms:modified dcterms:description "Last time the data in the feed was updated in POSIX time.";
-    rdf:type rdf:Property.
+dcterms:modified rdf:type rdf:Property.
 gbfs:ttl dcterms:description "Number of seconds before the data in the feed will be updated again (0 if the data should always be refreshed).";
     rdf:type rdf:Property;
     rdfs:label "ttl";
@@ -76,8 +75,7 @@ gbfs:properties dcterms:description "Describing travel allowances and limitation
 gbfs:Property dcterms:description "Property that describe travel allowances and limitations.";
     rdf:type rdfs:Class;
     rdfs:label "Property".
-dcterms:title dcterms:description "Public name of the geofencing zone.";
-    rdf:type rdf:Property.
+dcterms:title rdf:type rdf:Property.
 gbfs:start dcterms:description "Start time of the geofencing zone in POSIX time.";
     rdf:type rdf:Property;
     rdfs:label "start";

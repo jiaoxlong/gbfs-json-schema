@@ -24,8 +24,7 @@
     dcterms:rights "Copyright statement";
     dcterms:modified "2022-06-02T11:32:52.12679".
 <https://github.com/NABSA/gbfs/blob/v2.2/gbfs.md#station_informationjson> dcterms:description "Details including system operator, system location, year implemented, URL, contact info, time zone.".
-dcterms:modified dcterms:description "Last time the data in the feed was updated in POSIX time.";
-    rdf:type rdf:Property.
+dcterms:modified rdf:type rdf:Property.
 gbfs:ttl dcterms:description "Number of seconds before the data in the feed will be updated again (0 if the data should always be refreshed).";
     rdf:type rdf:Property;
     rdfs:label "ttl";
@@ -53,12 +52,9 @@ gbfs:short_name dcterms:description "Short name or other type of identifier.";
     rdfs:label "short_name";
     rdfs:domain mobivoc:BicycleParkingStation;
     rdfs:range xsd:string.
-geo:lat dcterms:description "The latitude of the station.";
-    rdf:type rdf:Property.
-geo:long dcterms:description "The longitude fo the station.";
-    rdf:type rdf:Property.
-schema:address dcterms:description "Address where station is located.";
-    rdf:type rdf:Property.
+geo:lat rdf:type rdf:Property.
+geo:long rdf:type rdf:Property.
+schema:address rdf:type rdf:Property.
 gbfs:cross_street dcterms:description "Cross street or landmark where the station is located.";
     rdf:type rdf:Property;
     rdfs:label "cross_street";
@@ -69,8 +65,7 @@ gbfs:region_id dcterms:description "Identifier of the region where the station i
     rdfs:label "region_id";
     rdfs:domain mobivoc:BicycleParkingStation;
     rdfs:range xsd:string.
-schema:postalCode dcterms:description "Postal code where station is located.";
-    rdf:type rdf:Property.
+schema:postalCode rdf:type rdf:Property.
 gbfs:rental_methods rdf:type rdf:Property;
     rdfs:label "rental_methods";
     rdfs:domain mobivoc:BicycleParkingStation.

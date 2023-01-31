@@ -14,6 +14,7 @@ gbfsshape:vehicle_typesjson-added-in-v21-rcShape rdf:type sh:NodeShape;
     sh:targetClass <https://github.com/NABSA/gbfs/blob/v2.2/gbfs.md#vehicle_typesjson-added-in-v21-rc>;
     sh:property [
   sh:path dcterms:modified;
+  sh:description "Last time the data in the feed was updated in POSIX time.";
   sh:minCount 1;
   sh:maxCount 1;
   sh:minInclusive 1450155600;
