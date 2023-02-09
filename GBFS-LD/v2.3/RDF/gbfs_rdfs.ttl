@@ -7,22 +7,13 @@
 @prefix dcterms: <http://purl.org/dc/terms/>.
 @prefix owl: <http://www.w3.org/2002/07/owl#>.
 @prefix jsonsc: <https://www.w3.org/2019/wot/json-schema#>.
-@prefix gbfs: <https://w3id.org/gbfs#>.
 @prefix jsonsc-ld: <http://w3id.org/jsonsc-ld/>.
 @prefix api: <http://purl.org/linked-data/api/vocab>.
 @prefix geo: <http://www.w3.org/2003/01/geo/wgs84_pos#>.
 @prefix mobivoc: <http://schema.mobivoc.org/#>.
 @prefix geosparql: <http://www.opengis.net/ont/geosparql#>.
+@prefix gbfs: <https://w3id.org/gbfs#>.
 
-<https://github.com/NABSA/gbfs/blob/v2.3/gbfs-ld.json> rdf:type jsonsc-ld:Schema;
-    jsonsc-ld:enriches <https://github.com/NABSA/gbfs/blob/v2.3/gbfs.md#gbfsjson>.
-<https://github.com/NABSA/gbfs/blob/v2.3/gbfs.md#gbfsjson> rdf:type rdfs:Class.
-<https://github.com/NABSA/gbfs/blob/v2.3/gbfs-ld.json> dcterms:title "The GBFS LD configuration";
-    dcterms:description "A file containing extra configuration to map the GBFS json schemas to an RDFS vocabulary";
-    dcterms:creator <https://pietercolpaert.be/#me>, <https://w3id.org/people/brechtvdv/#me>, <https://data.knows.idlab.ugent.be/person/andreipopescu/#me>, <https://data.knows.idlab.ugent.be/person/jilong/#me>;
-    dcterms:license "MIT";
-    dcterms:rights "Copyright statement";
-    dcterms:modified "2022-06-02T11:32:52.12679".
 <https://github.com/NABSA/gbfs/blob/v2.3/gbfs.md#gbfsjson> dcterms:description "Auto-discovery file that links to all of the other files published by the system.".
 dcterms:modified rdf:type rdf:Property.
 gbfs:ttl dcterms:description "Number of seconds before the data in the feed will be updated again (0 if the data should always be refreshed).";

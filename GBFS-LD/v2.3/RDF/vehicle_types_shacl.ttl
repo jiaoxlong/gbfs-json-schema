@@ -78,6 +78,24 @@ gbfs:Vehicle_typeShape rdf:type sh:NodeShape;
   sh:minCount 1;
   sh:maxCount 1
 ], [
+  sh:path gbfs:eco_label;
+  sh:description "Vehicle air quality certificate. added in v2.3.";
+  sh:name "eco_label"
+].
+gbfs:EcoLabelShape rdf:type sh:NodeShape;
+    sh:targetClass gbfs:EcoLabel;
+    sh:property [
+  sh:path gbfs:country_code;
+  sh:description " Country code following the ISO 3166-1 alpha-2 notation. Added in v2.3.";
+  sh:name "country_code";
+  sh:pattern "^[A-Z]{2}";
+  sh:datatype xsd:string
+], [
+  sh:path gbfs:eco_sticker;
+  sh:description " Name of the eco label. Added in v2.3.";
+  sh:name "eco_sticker";
+  sh:datatype xsd:string
+], [
   sh:path gbfs:max_range_meters;
   sh:description "The furthest distance in meters that the vehicle can travel without recharging or refueling when it has the maximum amount of energy potential.";
   sh:name "max_range_meters";
