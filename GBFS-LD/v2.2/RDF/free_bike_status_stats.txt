@@ -1,0 +1,17 @@
+last_updated
+ttl
+version
+bike_id
+lat
+lon
+is_reserved
+is_disabled
+rental_uris
+android
+ios
+web
+vehicle_type_id
+last_reported
+current_range_meters
+station_id
+pricing_plan_id

@@ -1,0 +1,14 @@
+last_updated
+ttl
+version
+alert_id
+type
+times
+start
+end
+station_ids
+region_ids
+url
+summary
+description
+last_updated

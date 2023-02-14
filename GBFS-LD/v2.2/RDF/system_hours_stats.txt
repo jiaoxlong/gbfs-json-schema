@@ -1,0 +1,7 @@
+last_updated
+ttl
+version
+user_types
+days
+start_time
+end_time

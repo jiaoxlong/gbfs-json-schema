@@ -1,0 +1,17 @@
+last_updated
+ttl
+version
+type
+features
+type
+properties
+name
+start
+end
+rules
+vehicle_type_id
+ride_allowed
+ride_through_allowed
+maximum_speed_kph
+geometry
+type
