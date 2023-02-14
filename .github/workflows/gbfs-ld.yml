@@ -16,7 +16,7 @@ jobs:
           node-version: 18.x
 
       # install jsc-ld package
-      - run: npm i -g jsc-ld
+      - run: npm i -g json-schema-ld
 
       # env variables
       - name: "declare env variables"
