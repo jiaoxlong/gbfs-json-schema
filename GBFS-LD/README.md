@@ -1,6 +1,6 @@
 # GBFS-LD GitHub action workflow
 
-built with `3.2.5`
+built with `3.2.7`
 
 [GBFS-LD workflow](./github/workflows/gbfs-ld.yml) is a CI/CD pipeline to convert GBFS JSON Schemas to RDF vocabulary and Shacl shapes using [jsc-ld package](https://www.npmjs.com/package/jsc-ld).
 
