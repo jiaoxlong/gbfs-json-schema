@@ -39,43 +39,70 @@ gbfs:form_factor dcterms:description "The vehicle's general form factor.";
     rdfs:domain gbfs:Vehicle_type.
 gbfs:Form_factor rdf:type skos:ConceptScheme.
 gbfs:form_factor rdfs:range [
-  owl:oneOf (gbfs:bicycle gbfs:car gbfs:moped gbfs:other gbfs:scooter)
+  owl:oneOf (<gbfs> "bicycle" <gbfs> "car" <gbfs> "moped" <gbfs> "other" <gbfs> "scooter")
 ].
-gbfs:bicycle rdf:type skos:Concept;
+<gbfs> rdf:type skos:Concept;
     skos:inScheme gbfs:Form_factor;
-    rdfs:label "bicycle".
-gbfs:car rdf:type skos:Concept;
+    rdfs:label "gbfs".
+"bicycle" rdf:type skos:Concept;
     skos:inScheme gbfs:Form_factor;
-    rdfs:label "car".
-gbfs:moped rdf:type skos:Concept;
+    rdfs:label "\"bicycle\"".
+<gbfs> rdf:type skos:Concept;
     skos:inScheme gbfs:Form_factor;
-    rdfs:label "moped".
-gbfs:other rdf:type skos:Concept;
+    rdfs:label "gbfs".
+"car" rdf:type skos:Concept;
     skos:inScheme gbfs:Form_factor;
-    rdfs:label "other".
-gbfs:scooter rdf:type skos:Concept;
+    rdfs:label "\"car\"".
+<gbfs> rdf:type skos:Concept;
     skos:inScheme gbfs:Form_factor;
-    rdfs:label "scooter".
+    rdfs:label "gbfs".
+"moped" rdf:type skos:Concept;
+    skos:inScheme gbfs:Form_factor;
+    rdfs:label "\"moped\"".
+<gbfs> rdf:type skos:Concept;
+    skos:inScheme gbfs:Form_factor;
+    rdfs:label "gbfs".
+"other" rdf:type skos:Concept;
+    skos:inScheme gbfs:Form_factor;
+    rdfs:label "\"other\"".
+<gbfs> rdf:type skos:Concept;
+    skos:inScheme gbfs:Form_factor;
+    rdfs:label "gbfs".
+"scooter" rdf:type skos:Concept;
+    skos:inScheme gbfs:Form_factor;
+    rdfs:label "\"scooter\"".
 gbfs:propulsion_type dcterms:description "The primary propulsion type of the vehicle.";
     rdf:type rdf:Property;
     rdfs:label "propulsion_type";
     rdfs:domain gbfs:Vehicle_type.
 gbfs:Propulsion_type rdf:type skos:ConceptScheme.
 gbfs:propulsion_type rdfs:range [
-  owl:oneOf (gbfs:human gbfs:electric_assist gbfs:electric gbfs:combustion)
+  owl:oneOf (<gbfs> "human" <gbfs> "electric_assist" <gbfs> "electric" <gbfs> "combustion")
 ].
-gbfs:human rdf:type skos:Concept;
+<gbfs> rdf:type skos:Concept;
     skos:inScheme gbfs:Propulsion_type;
-    rdfs:label "human".
-gbfs:electric_assist rdf:type skos:Concept;
+    rdfs:label "gbfs".
+"human" rdf:type skos:Concept;
     skos:inScheme gbfs:Propulsion_type;
-    rdfs:label "electric_assist".
-gbfs:electric rdf:type skos:Concept;
+    rdfs:label "\"human\"".
+<gbfs> rdf:type skos:Concept;
     skos:inScheme gbfs:Propulsion_type;
-    rdfs:label "electric".
-gbfs:combustion rdf:type skos:Concept;
+    rdfs:label "gbfs".
+"electric_assist" rdf:type skos:Concept;
     skos:inScheme gbfs:Propulsion_type;
-    rdfs:label "combustion".
+    rdfs:label "\"electric_assist\"".
+<gbfs> rdf:type skos:Concept;
+    skos:inScheme gbfs:Propulsion_type;
+    rdfs:label "gbfs".
+"electric" rdf:type skos:Concept;
+    skos:inScheme gbfs:Propulsion_type;
+    rdfs:label "\"electric\"".
+<gbfs> rdf:type skos:Concept;
+    skos:inScheme gbfs:Propulsion_type;
+    rdfs:label "gbfs".
+"combustion" rdf:type skos:Concept;
+    skos:inScheme gbfs:Propulsion_type;
+    rdfs:label "\"combustion\"".
 gbfs:max_range_meters dcterms:description "The furthest distance in meters that the vehicle can travel without recharging or refueling when it has the maximum amount of energy potential.";
     rdf:type rdf:Property;
     rdfs:label "max_range_meters";

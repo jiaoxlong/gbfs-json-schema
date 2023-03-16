@@ -11,8 +11,8 @@
 @prefix gbfsshape: <https://w3id.org/gbfs/shapes/system_alertsjson#>.
 
 gbfsshape:system_alertsjsonShape rdf:type sh:NodeShape;
-    sh:targetClass <https://github.com/NABSA/gbfs/blob/v2.3/gbfs.md#system_alertsjson>;
-    sh:property [
+    sh:targetClass <https://github.com/NABSA/gbfs/blob/v2.3/gbfs.md#system_alertsjson>.
+gbfs:system_alertsjsonShape sh:property [
   sh:path dcterms:modified;
   sh:description "Last time the data in the feed was updated in POSIX time.";
   sh:minCount 1;
@@ -49,7 +49,7 @@ gbfs:AlertShape rdf:type sh:NodeShape;
   sh:path gbfs:type;
   sh:description "Type of alert.";
   sh:name "type";
-  sh:in (gbfs:system_closure gbfs:station_closure gbfs:station_move gbfs:other);
+  sh:in (<gbfs> "system_closure" <gbfs> "station_closure" <gbfs> "station_move" <gbfs> "other");
   sh:minCount 1;
   sh:maxCount 1
 ], [
@@ -71,7 +71,8 @@ gbfs:AlertTimeShape rdf:type sh:NodeShape;
   sh:name "end";
   sh:minInclusive 1450155600;
   sh:datatype xsd:integer
-], [
+].
+gbfs:AlertShape sh:property [
   sh:path gbfs:station_ids;
   sh:name "station_ids";
   sh:datatype xsd:string

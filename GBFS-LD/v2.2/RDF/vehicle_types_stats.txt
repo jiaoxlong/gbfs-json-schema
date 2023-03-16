@@ -1,0 +1,8 @@
+last_updated
+ttl
+version
+vehicle_type_id
+form_factor
+propulsion_type
+max_range_meters
+name

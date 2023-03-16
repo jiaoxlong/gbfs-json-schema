@@ -16,7 +16,7 @@ jobs:
           node-version: 18.x
 
       # install jsc-ld package
-      - run: npm i -g jsc-ld
+      - run: npm i -g json-schema-ld
 
       # env variables
       - name: "declare env variables"
@@ -40,7 +40,7 @@ jobs:
               find $ld_version_dir/$version/RDF -type f -delete
               mkdir -p $ld_version_dir/$version/RDF
               #jsc-ld -s $ld_version_dir/$version/JSC-LD -c $ld_version_dir/configs/config.json -o $ld_version_dir/$version/RDF
-              jsc-ld -s $ld_version_dir/$version/JSC-LD -p gbfs -u "https://w3id.org/gbfs#" -o $ld_version_dir/$version/RDF
+              json-schema-ld -s $ld_version_dir/$version/JSC-LD -p gbfs -u "https://w3id.org/gbfs#" -o $ld_version_dir/$version/RDF
             done
 
       # setup GitHub username and email.

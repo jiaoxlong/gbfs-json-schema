@@ -11,8 +11,8 @@
 @prefix gbfsshape: <https://w3id.org/gbfs/shapes/gbfs_versionsjson-added-in-v11#>.
 
 gbfsshape:gbfs_versionsjson-added-in-v11Shape rdf:type sh:NodeShape;
-    sh:targetClass <https://github.com/NABSA/gbfs/blob/v2.2/gbfs.md#gbfs_versionsjson-added-in-v11>;
-    sh:property [
+    sh:targetClass <https://github.com/NABSA/gbfs/blob/v2.2/gbfs.md#gbfs_versionsjson-added-in-v11>.
+gbfs:gbfs_versionsjson-added-in-v11Shape sh:property [
   sh:path dcterms:modified;
   sh:description "Last time the data in the feed was updated in POSIX time.";
   sh:minCount 1;
@@ -42,7 +42,7 @@ gbfs:VersionShape rdf:type sh:NodeShape;
   sh:path gbfs:version;
   sh:description "The semantic version of the feed in the form X.Y";
   sh:name "version";
-  sh:in (gbfs:1.0 gbfs:1.1 gbfs:2.0 gbfs:2.1 gbfs:2.2);
+  sh:in (<gbfs> "1.0" <gbfs> "1.1" <gbfs> "2.0" <gbfs> "2.1" <gbfs> "2.2");
   sh:minCount 1;
   sh:maxCount 1
 ], [

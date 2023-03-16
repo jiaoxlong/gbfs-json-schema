@@ -11,8 +11,8 @@
 @prefix gbfsshape: <https://w3id.org/gbfs/shapes/free_bike_statusjson#>.
 
 gbfsshape:free_bike_statusjsonShape rdf:type sh:NodeShape;
-    sh:targetClass <https://github.com/NABSA/gbfs/blob/v2.3/gbfs.md#free_bike_statusjson>;
-    sh:property [
+    sh:targetClass <https://github.com/NABSA/gbfs/blob/v2.3/gbfs.md#free_bike_statusjson>.
+gbfs:free_bike_statusjsonShape sh:property [
   sh:path dcterms:modified;
   sh:description "Last time the data in the feed was updated in POSIX time.";
   sh:minCount 1;
@@ -93,7 +93,8 @@ gbfs:Rental_urisShape rdf:type sh:NodeShape;
   sh:description "URL that can be used by a web browser to show more information about renting this vehicle (added in v1.1).";
   sh:name "web";
   sh:datatype xsd:anyURI
-], [
+].
+gbfs:BikeShape sh:property [
   sh:path gbfs:vehicle_type_id;
   sh:description "The vehicle_type_id of this vehicle (added in v2.1-RC).";
   sh:name "vehicle_type_id";
@@ -131,6 +132,10 @@ gbfs:Rental_urisShape rdf:type sh:NodeShape;
   sh:description "The plan_id of the pricing plan this vehicle is eligible for (added in v2.2).";
   sh:name "pricing_plan_id";
   sh:datatype xsd:string
+], [
+  sh:path gbfs:vehicle_equipment;
+  sh:name "vehicle_equipment";
+  sh:in (<gbfs> "child_seat_a" <gbfs> "child_seat_b" <gbfs> "child_seat_c" <gbfs> "winter_tires" <gbfs> "snow_chains")
 ], [
   sh:path gbfs:available_until;
   sh:description "The date and time when any rental of the vehicle must be completed. Added in v2.3.";
