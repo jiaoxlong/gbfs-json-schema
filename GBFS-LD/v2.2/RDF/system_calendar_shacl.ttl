@@ -12,7 +12,7 @@
 
 gbfsshape:system_calendarjsonShape rdf:type sh:NodeShape;
     sh:targetClass <https://github.com/NABSA/gbfs/blob/v2.2/gbfs.md#system_calendarjson>.
-gbfs:system_calendarjsonShape sh:property [
+gbfsshape:system_calendarjsonShape sh:property [
   sh:path dcterms:modified;
   sh:description "Last time the data in the feed was updated in POSIX time.";
   sh:minCount 1;
@@ -36,7 +36,7 @@ gbfs:system_calendarjsonShape sh:property [
   sh:maxCount 1;
   sh:datatype xsd:string
 ].
-gbfs:CalendarShape rdf:type sh:NodeShape;
+gbfsshape:CalendarShape rdf:type sh:NodeShape;
     sh:targetClass gbfs:Calendar;
     sh:property [
   sh:path gbfs:start_month;

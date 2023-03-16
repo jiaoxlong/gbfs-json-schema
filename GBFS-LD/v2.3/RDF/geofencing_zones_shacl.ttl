@@ -12,7 +12,7 @@
 
 gbfsshape:geofencing_zonesjsonShape rdf:type sh:NodeShape;
     sh:targetClass <https://github.com/NABSA/gbfs/blob/v2.3/gbfs.md#geofencing_zonesjson>.
-gbfs:geofencing_zonesjsonShape sh:property [
+gbfsshape:geofencing_zonesjsonShape sh:property [
   sh:path dcterms:modified;
   sh:description "Last time the data in the feed was updated in POSIX time.";
   sh:minCount 1;
@@ -36,13 +36,13 @@ gbfs:geofencing_zonesjsonShape sh:property [
   sh:maxCount 1;
   sh:datatype xsd:string
 ].
-gbfs:Geofencing_zoneShape rdf:type sh:NodeShape;
+gbfsshape:Geofencing_zoneShape rdf:type sh:NodeShape;
     sh:targetClass gbfs:Geofencing_zone;
     sh:property [
   sh:path gbfs:type;
   sh:description "FeatureCollection as per IETF RFC 7946.";
   sh:name "type";
-  sh:in (<gbfs> "FeatureCollection");
+  sh:in (gbfs:FeatureCollection);
   sh:minCount 1;
   sh:maxCount 1
 ], [
@@ -51,12 +51,12 @@ gbfs:Geofencing_zoneShape rdf:type sh:NodeShape;
   sh:name "features";
   sh:minCount 1
 ].
-gbfs:FeatureShape rdf:type sh:NodeShape;
+gbfsshape:FeatureShape rdf:type sh:NodeShape;
     sh:targetClass gbfs:Feature;
     sh:property [
   sh:path gbfs:type;
   sh:name "type";
-  sh:in (<gbfs> "Feature");
+  sh:in (gbfs:Feature);
   sh:minCount 1;
   sh:maxCount 1
 ], [
@@ -66,7 +66,7 @@ gbfs:FeatureShape rdf:type sh:NodeShape;
   sh:minCount 1;
   sh:maxCount 1
 ].
-gbfs:PropertyShape rdf:type sh:NodeShape;
+gbfsshape:PropertyShape rdf:type sh:NodeShape;
     sh:targetClass gbfs:Property;
     sh:property [
   sh:path dcterms:title;
@@ -89,7 +89,7 @@ gbfs:PropertyShape rdf:type sh:NodeShape;
   sh:description "Array that contains one object per rule.";
   sh:name "rules"
 ].
-gbfs:RuleShape rdf:type sh:NodeShape;
+gbfsshape:RuleShape rdf:type sh:NodeShape;
     sh:targetClass gbfs:Rule;
     sh:property [
   sh:path gbfs:vehicle_type_id;
@@ -127,12 +127,12 @@ gbfs:RuleShape rdf:type sh:NodeShape;
   sh:minCount 1;
   sh:maxCount 1
 ].
-gbfs:GeometryShape rdf:type sh:NodeShape;
+gbfsshape:GeometryShape rdf:type sh:NodeShape;
     sh:targetClass gbfs:Geometry;
     sh:property [
   sh:path gbfs:type;
   sh:name "type";
-  sh:in (<gbfs> "MultiPolygon");
+  sh:in (gbfs:MultiPolygon);
   sh:minCount 1;
   sh:maxCount 1
 ].

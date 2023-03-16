@@ -12,7 +12,7 @@
 
 gbfsshape:free_bike_statusjsonShape rdf:type sh:NodeShape;
     sh:targetClass <https://github.com/NABSA/gbfs/blob/v2.2/gbfs.md#free_bike_statusjson>.
-gbfs:free_bike_statusjsonShape sh:property [
+gbfsshape:free_bike_statusjsonShape sh:property [
   sh:path dcterms:modified;
   sh:description "Last time the data in the feed was updated in POSIX time.";
   sh:minCount 1;
@@ -36,7 +36,7 @@ gbfs:free_bike_statusjsonShape sh:property [
   sh:maxCount 1;
   sh:datatype xsd:string
 ].
-gbfs:BikeShape rdf:type sh:NodeShape;
+gbfsshape:BikeShape rdf:type sh:NodeShape;
     sh:targetClass gbfs:Bike;
     sh:property [
   sh:path gbfs:bike_id;
@@ -76,7 +76,7 @@ gbfs:BikeShape rdf:type sh:NodeShape;
   sh:description "Contains rental uris for Android, iOS, and web in the android, ios, and web fields (added in v1.1).";
   sh:name "rental_uris"
 ].
-gbfs:Rental_urisShape rdf:type sh:NodeShape;
+gbfsshape:Rental_urisShape rdf:type sh:NodeShape;
     sh:targetClass gbfs:Rental_uris;
     sh:property [
   sh:path gbfs:android;
@@ -94,7 +94,7 @@ gbfs:Rental_urisShape rdf:type sh:NodeShape;
   sh:name "web";
   sh:datatype xsd:anyURI
 ].
-gbfs:BikeShape sh:property [
+gbfsshape:BikeShape sh:property [
   sh:path gbfs:vehicle_type_id;
   sh:description "The vehicle_type_id of this vehicle (added in v2.1-RC).";
   sh:name "vehicle_type_id";

@@ -12,7 +12,7 @@
 
 gbfsshape:system_pricing_plansjsonShape rdf:type sh:NodeShape;
     sh:targetClass <https://github.com/NABSA/gbfs/blob/v2.2/gbfs.md#system_pricing_plansjson>.
-gbfs:system_pricing_plansjsonShape sh:property [
+gbfsshape:system_pricing_plansjsonShape sh:property [
   sh:path dcterms:modified;
   sh:description "Last time the data in the feed was updated in POSIX time.";
   sh:minCount 1;
@@ -36,7 +36,7 @@ gbfs:system_pricing_plansjsonShape sh:property [
   sh:maxCount 1;
   sh:datatype xsd:string
 ].
-gbfs:PricePlanShape rdf:type sh:NodeShape;
+gbfsshape:PricePlanShape rdf:type sh:NodeShape;
     sh:targetClass gbfs:PricePlan;
     sh:property [
   sh:path gbfs:plan_id;
@@ -92,7 +92,7 @@ gbfs:PricePlanShape rdf:type sh:NodeShape;
   sh:description "Array of segments when the price is a function of distance travelled, displayed in kilometers (added in v2.1-RC2).";
   sh:name "per_km_pricing"
 ].
-gbfs:Per_km_pricingShape rdf:type sh:NodeShape;
+gbfsshape:Per_km_pricingShape rdf:type sh:NodeShape;
     sh:targetClass gbfs:Per_km_pricing;
     sh:property [
   sh:path gbfs:start;
@@ -124,12 +124,12 @@ gbfs:Per_km_pricingShape rdf:type sh:NodeShape;
   sh:minInclusive 0;
   sh:datatype xsd:integer
 ].
-gbfs:PricePlanShape sh:property [
+gbfsshape:PricePlanShape sh:property [
   sh:path gbfs:per_min_pricing;
   sh:description "Array of segments when the price is a function of time travelled, displayed in minutes (added in v2.1-RC2).";
   sh:name "per_min_pricing"
 ].
-gbfs:Per_min_pricingShape rdf:type sh:NodeShape;
+gbfsshape:Per_min_pricingShape rdf:type sh:NodeShape;
     sh:targetClass gbfs:Per_min_pricing;
     sh:property [
   sh:path gbfs:start;
@@ -161,7 +161,7 @@ gbfs:Per_min_pricingShape rdf:type sh:NodeShape;
   sh:minInclusive 0;
   sh:datatype xsd:integer
 ].
-gbfs:PricePlanShape sh:property [
+gbfsshape:PricePlanShape sh:property [
   sh:path gbfs:surge_pricing;
   sh:description "Is there currently an increase in price in response to increased demand in this pricing plan? (added in v2.1-RC2)";
   sh:name "surge_pricing";

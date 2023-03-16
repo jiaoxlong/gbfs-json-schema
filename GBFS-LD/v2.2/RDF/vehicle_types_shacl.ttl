@@ -12,7 +12,7 @@
 
 gbfsshape:vehicle_typesjson-added-in-v21-rcShape rdf:type sh:NodeShape;
     sh:targetClass <https://github.com/NABSA/gbfs/blob/v2.2/gbfs.md#vehicle_typesjson-added-in-v21-rc>.
-gbfs:vehicle_typesjson-added-in-v21-rcShape sh:property [
+gbfsshape:vehicle_typesjson-added-in-v21-rcShape sh:property [
   sh:path dcterms:modified;
   sh:description "Last time the data in the feed was updated in POSIX time.";
   sh:minCount 1;
@@ -36,7 +36,7 @@ gbfs:vehicle_typesjson-added-in-v21-rcShape sh:property [
   sh:maxCount 1;
   sh:datatype xsd:string
 ].
-gbfs:Vehicle_typeShape rdf:type sh:NodeShape;
+gbfsshape:Vehicle_typeShape rdf:type sh:NodeShape;
     sh:targetClass gbfs:Vehicle_type;
     sh:property [
   sh:path gbfs:vehicle_type_id;
@@ -49,14 +49,14 @@ gbfs:Vehicle_typeShape rdf:type sh:NodeShape;
   sh:path gbfs:form_factor;
   sh:description "The vehicle's general form factor.";
   sh:name "form_factor";
-  sh:in (<gbfs> "bicycle" <gbfs> "car" <gbfs> "moped" <gbfs> "other" <gbfs> "scooter");
+  sh:in (gbfs:bicycle gbfs:car gbfs:moped gbfs:other gbfs:scooter);
   sh:minCount 1;
   sh:maxCount 1
 ], [
   sh:path gbfs:propulsion_type;
   sh:description "The primary propulsion type of the vehicle.";
   sh:name "propulsion_type";
-  sh:in (<gbfs> "human" <gbfs> "electric_assist" <gbfs> "electric" <gbfs> "combustion");
+  sh:in (gbfs:human gbfs:electric_assist gbfs:electric gbfs:combustion);
   sh:minCount 1;
   sh:maxCount 1
 ], [

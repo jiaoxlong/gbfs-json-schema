@@ -33,69 +33,42 @@ gbfs:user_types rdf:type rdf:Property;
     rdfs:domain gbfs:RentalHour.
 gbfs:User_types rdf:type skos:ConceptScheme.
 gbfs:user_types rdfs:range [
-  owl:oneOf (<gbfs> "member" <gbfs> "nonmember")
+  owl:oneOf (gbfs:member gbfs:nonmember)
 ].
-<gbfs> rdf:type skos:Concept;
+gbfs:member rdf:type skos:Concept;
     skos:inScheme gbfs:User_types;
-    rdfs:label "gbfs".
-"member" rdf:type skos:Concept;
+    rdfs:label "member".
+gbfs:nonmember rdf:type skos:Concept;
     skos:inScheme gbfs:User_types;
-    rdfs:label "\"member\"".
-<gbfs> rdf:type skos:Concept;
-    skos:inScheme gbfs:User_types;
-    rdfs:label "gbfs".
-"nonmember" rdf:type skos:Concept;
-    skos:inScheme gbfs:User_types;
-    rdfs:label "\"nonmember\"".
+    rdfs:label "nonmember".
 gbfs:days rdf:type rdf:Property;
     rdfs:label "days";
     rdfs:domain gbfs:RentalHour.
 gbfs:Days rdf:type skos:ConceptScheme.
 gbfs:days rdfs:range [
-  owl:oneOf (<gbfs> "sun" <gbfs> "mon" <gbfs> "tue" <gbfs> "wed" <gbfs> "thu" <gbfs> "fri" <gbfs> "sat")
+  owl:oneOf (gbfs:sun gbfs:mon gbfs:tue gbfs:wed gbfs:thu gbfs:fri gbfs:sat)
 ].
-<gbfs> rdf:type skos:Concept;
+gbfs:sun rdf:type skos:Concept;
     skos:inScheme gbfs:Days;
-    rdfs:label "gbfs".
-"sun" rdf:type skos:Concept;
+    rdfs:label "sun".
+gbfs:mon rdf:type skos:Concept;
     skos:inScheme gbfs:Days;
-    rdfs:label "\"sun\"".
-<gbfs> rdf:type skos:Concept;
+    rdfs:label "mon".
+gbfs:tue rdf:type skos:Concept;
     skos:inScheme gbfs:Days;
-    rdfs:label "gbfs".
-"mon" rdf:type skos:Concept;
+    rdfs:label "tue".
+gbfs:wed rdf:type skos:Concept;
     skos:inScheme gbfs:Days;
-    rdfs:label "\"mon\"".
-<gbfs> rdf:type skos:Concept;
+    rdfs:label "wed".
+gbfs:thu rdf:type skos:Concept;
     skos:inScheme gbfs:Days;
-    rdfs:label "gbfs".
-"tue" rdf:type skos:Concept;
+    rdfs:label "thu".
+gbfs:fri rdf:type skos:Concept;
     skos:inScheme gbfs:Days;
-    rdfs:label "\"tue\"".
-<gbfs> rdf:type skos:Concept;
+    rdfs:label "fri".
+gbfs:sat rdf:type skos:Concept;
     skos:inScheme gbfs:Days;
-    rdfs:label "gbfs".
-"wed" rdf:type skos:Concept;
-    skos:inScheme gbfs:Days;
-    rdfs:label "\"wed\"".
-<gbfs> rdf:type skos:Concept;
-    skos:inScheme gbfs:Days;
-    rdfs:label "gbfs".
-"thu" rdf:type skos:Concept;
-    skos:inScheme gbfs:Days;
-    rdfs:label "\"thu\"".
-<gbfs> rdf:type skos:Concept;
-    skos:inScheme gbfs:Days;
-    rdfs:label "gbfs".
-"fri" rdf:type skos:Concept;
-    skos:inScheme gbfs:Days;
-    rdfs:label "\"fri\"".
-<gbfs> rdf:type skos:Concept;
-    skos:inScheme gbfs:Days;
-    rdfs:label "gbfs".
-"sat" rdf:type skos:Concept;
-    skos:inScheme gbfs:Days;
-    rdfs:label "\"sat\"".
+    rdfs:label "sat".
 gbfs:start_time dcterms:description "Start time for the hours of operation of the system.";
     rdf:type rdf:Property;
     rdfs:label "start_time";

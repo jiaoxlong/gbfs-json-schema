@@ -62,56 +62,32 @@ gbfs:rental_methods rdf:type rdf:Property;
     rdfs:domain mobivoc:BicycleParkingStation.
 gbfs:Rental_methods rdf:type skos:ConceptScheme.
 gbfs:rental_methods rdfs:range [
-  owl:oneOf (<gbfs> "key" <gbfs> "creditcard" <gbfs> "paypass" <gbfs> "applepay" <gbfs> "androidpay" <gbfs> "transitcard" <gbfs> "accountnumber" <gbfs> "phone")
+  owl:oneOf (gbfs:key gbfs:creditcard gbfs:paypass gbfs:applepay gbfs:androidpay gbfs:transitcard gbfs:accountnumber gbfs:phone)
 ].
-<gbfs> rdf:type skos:Concept;
+gbfs:key rdf:type skos:Concept;
     skos:inScheme gbfs:Rental_methods;
-    rdfs:label "gbfs".
-"key" rdf:type skos:Concept;
+    rdfs:label "key".
+gbfs:creditcard rdf:type skos:Concept;
     skos:inScheme gbfs:Rental_methods;
-    rdfs:label "\"key\"".
-<gbfs> rdf:type skos:Concept;
+    rdfs:label "creditcard".
+gbfs:paypass rdf:type skos:Concept;
     skos:inScheme gbfs:Rental_methods;
-    rdfs:label "gbfs".
-"creditcard" rdf:type skos:Concept;
+    rdfs:label "paypass".
+gbfs:applepay rdf:type skos:Concept;
     skos:inScheme gbfs:Rental_methods;
-    rdfs:label "\"creditcard\"".
-<gbfs> rdf:type skos:Concept;
+    rdfs:label "applepay".
+gbfs:androidpay rdf:type skos:Concept;
     skos:inScheme gbfs:Rental_methods;
-    rdfs:label "gbfs".
-"paypass" rdf:type skos:Concept;
+    rdfs:label "androidpay".
+gbfs:transitcard rdf:type skos:Concept;
     skos:inScheme gbfs:Rental_methods;
-    rdfs:label "\"paypass\"".
-<gbfs> rdf:type skos:Concept;
+    rdfs:label "transitcard".
+gbfs:accountnumber rdf:type skos:Concept;
     skos:inScheme gbfs:Rental_methods;
-    rdfs:label "gbfs".
-"applepay" rdf:type skos:Concept;
+    rdfs:label "accountnumber".
+gbfs:phone rdf:type skos:Concept;
     skos:inScheme gbfs:Rental_methods;
-    rdfs:label "\"applepay\"".
-<gbfs> rdf:type skos:Concept;
-    skos:inScheme gbfs:Rental_methods;
-    rdfs:label "gbfs".
-"androidpay" rdf:type skos:Concept;
-    skos:inScheme gbfs:Rental_methods;
-    rdfs:label "\"androidpay\"".
-<gbfs> rdf:type skos:Concept;
-    skos:inScheme gbfs:Rental_methods;
-    rdfs:label "gbfs".
-"transitcard" rdf:type skos:Concept;
-    skos:inScheme gbfs:Rental_methods;
-    rdfs:label "\"transitcard\"".
-<gbfs> rdf:type skos:Concept;
-    skos:inScheme gbfs:Rental_methods;
-    rdfs:label "gbfs".
-"accountnumber" rdf:type skos:Concept;
-    skos:inScheme gbfs:Rental_methods;
-    rdfs:label "\"accountnumber\"".
-<gbfs> rdf:type skos:Concept;
-    skos:inScheme gbfs:Rental_methods;
-    rdfs:label "gbfs".
-"phone" rdf:type skos:Concept;
-    skos:inScheme gbfs:Rental_methods;
-    rdfs:label "\"phone\"".
+    rdfs:label "phone".
 gbfs:is_virtual_station dcterms:description "Is this station a location with or without physical infrastructure? (added in v2.1-RC)";
     rdf:type rdf:Property;
     rdfs:label "is_virtual_station";
@@ -129,14 +105,11 @@ gbfs:type rdf:type rdf:Property;
     rdfs:domain gbfs:StationArea.
 gbfs:Type rdf:type skos:ConceptScheme.
 gbfs:type rdfs:range [
-  owl:oneOf (<gbfs> "MultiPolygon")
+  owl:oneOf (gbfs:MultiPolygon)
 ].
-<gbfs> rdf:type skos:Concept;
+gbfs:MultiPolygon rdf:type skos:Concept;
     skos:inScheme gbfs:Type;
-    rdfs:label "gbfs".
-"MultiPolygon" rdf:type skos:Concept;
-    skos:inScheme gbfs:Type;
-    rdfs:label "\"MultiPolygon\"".
+    rdfs:label "MultiPolygon".
 gbfs:capacity dcterms:description "Number of total docking points installed at this station, both available and unavailable.";
     rdf:type rdf:Property;
     rdfs:label "capacity";

@@ -12,7 +12,7 @@
 
 gbfsshape:station_statusjsonShape rdf:type sh:NodeShape;
     sh:targetClass <https://github.com/NABSA/gbfs/blob/v2.2/gbfs.md#station_statusjson>.
-gbfs:station_statusjsonShape sh:property [
+gbfsshape:station_statusjsonShape sh:property [
   sh:path dcterms:modified;
   sh:description "Last time the data in the feed was updated in POSIX time.";
   sh:minCount 1;
@@ -36,7 +36,7 @@ gbfs:station_statusjsonShape sh:property [
   sh:maxCount 1;
   sh:datatype xsd:string
 ].
-gbfs:BicycleParkingStationShape rdf:type sh:NodeShape;
+gbfsshape:BicycleParkingStationShape rdf:type sh:NodeShape;
     sh:targetClass mobivoc:BicycleParkingStation;
     sh:property [
   sh:path gbfs:station_id;
@@ -58,7 +58,7 @@ gbfs:BicycleParkingStationShape rdf:type sh:NodeShape;
   sh:description "Array of objects displaying the total number of each vehicle type at the station (added in v2.1-RC).";
   sh:name "vehicle_types_available"
 ].
-gbfs:Vehicle_types_availableShape rdf:type sh:NodeShape;
+gbfsshape:Vehicle_types_availableShape rdf:type sh:NodeShape;
     sh:targetClass gbfs:Vehicle_types_available;
     sh:property [
   sh:path gbfs:vehicle_type_id;
@@ -76,7 +76,7 @@ gbfs:Vehicle_types_availableShape rdf:type sh:NodeShape;
   sh:minInclusive 0;
   sh:datatype xsd:integer
 ].
-gbfs:BicycleParkingStationShape sh:property [
+gbfsshape:BicycleParkingStationShape sh:property [
   sh:path gbfs:num_bikes_disabled;
   sh:description "Number of disabled vehicles of any type at the station.";
   sh:name "num_bikes_disabled";
@@ -128,7 +128,7 @@ gbfs:BicycleParkingStationShape sh:property [
   sh:description "Object displaying available docks by vehicle type (added in v2.1-RC).";
   sh:name "vehicle_docks_available"
 ].
-gbfs:Vehicle_docks_availableShape rdf:type sh:NodeShape;
+gbfsshape:Vehicle_docks_availableShape rdf:type sh:NodeShape;
     sh:targetClass gbfs:Vehicle_docks_available;
     sh:property [
   sh:path gbfs:vehicle_type_ids;
